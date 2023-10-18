@@ -1,20 +1,85 @@
 <html>
-    <head>
-        {{> head}}
-    </head>
-    <body>
+  <head>
+    {{> head}}
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #eeeeee;
+      font-family: "Montserrat", sans-serif;
+    }
+    .main-container h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      padding-top: 1%;
+    }
+    .main-container label {
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding-bottom: 1%;
+    }
+    .main-container .labelpgn {
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding-top: 1%;
+    }
+    .main-container .status {
+      font-size: 1rem;
+      font-weight: 400;
+      padding-bottom: 1%;
+    }
+    .main-container .pgn {
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding-top: 1%;
+    }
+    .main-container .images {
+      padding-top: 3%;
+      width: 20%;
+      height: 15%;
+    }
+    @media only screen and (max-device-width: 480px) {
+      .main-container .images {
+        width: 40%;
+        height: 40%;
+      }
+    }
+  </style>
+  <body>
+    <div class="main-container">
+      <h1>Chess Duels</h1>
+      <label>Game Status:</label>
+      <div class="status" id="status"></div>
+      <div class="myBoard" id="myBoard" style="width: 700px"></div>
+      <label class="labelpgn">PGN:</label>
+      <div class="pgn" id="pgn"></div>
+      <img
+        class="images"
+        src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png"
+        alt="Amazon adds"
+      />
+      <img
+        class="images"
+        src="https://stockarea.io/blogs/wp-content/uploads/2021/11/flipkart-logo-39906.png"
+        alt="Amazon adds"
+      />
+    </div>
 
-        <div id="myBoard" style="width: 700px"></div>
-        <label>Status:</label>
-        <div id="status"></div>
-        <label>PGN:</label>
-        <div id="pgn"></div>
-
-        <script>
-            let playerColor = '{{color}}';
-            console.log('Playing as ' + playerColor);
-        </script>
-        <script src="/public/js/index.js"></script>
-
-    </body>
+    <script>
+      let playerColor = "{{color}}";
+      console.log("Playing as " + playerColor);
+    </script>
+    <script src="/public/js/index.js"></script>
+  </body>
 </html>
